@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header dashboard -->
     <header class="jumbotron">
-        <h1 class="display-4">Weather Dashboard</h1>
+      <p><i class="fas fa-cloud-sun-rain fa-4x"></i></p>
+      <h1 class="display-4">Weather Dashboard</h1>
     </header>
-    <div class="grid"></div>
+
+    <!-- Search -->
+    <div class="grid">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2" class="sr-only">Password</label>
+          <input
+            type="search"
+            class="form-control"
+            id="city-search"
+            placeholder="Enter a city"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+    </div>
+
+    <!-- Current city weather -->
+    <section id="current-weather">
+      <div>
+        <h2>City</h2>
+        <img class="current-icon" />
+        <p class="weather-info">
+          Temperature: <span class="temp">---</span> °F
+        </p>
+        <p class="weather-info">Humidity: <span class="humid">--</span>%</p>
+        <p class="weather-info">
+          Wind Speed: <span class="wind-speed">--</span> MPH
+        </p>
+        <p class="weather-info">
+          UV index: <span class="badge-danger uv-index">--</span>
+        </p>
+      </div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
