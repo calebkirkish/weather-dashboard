@@ -1,18 +1,132 @@
-.jumbotron {
-  text-align: center;
-  background-color: rgb(9, 9, 100);
-  color: white;
-  padding: 0px;
-  margin: 0px;
-  border-radius: 0px;
+body {
+  margin: 15px 5%;
 }
 
 .grid {
   display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "header header"
+    "search current"
+    "search forecast";
 }
 
+/* Rounding corders for cards */
+header,
+section,
+aside,
+.tile {
+  border-radius: 10px;
+}
+
+/* Header styles */
+header {
+  grid-area: header;
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgb(25, 25, 54);
+  color: rgb(116, 221, 90);
+  text-align: center;
+  padding: 30px;
+  height: fit-content;
+}
+
+/* Current weather card styles */
 #current-weather {
   padding: 15px;
   grid-area: current;
-  background-color: #aceee7;
+  background-color: rgb(130, 218, 199);
+}
+
+.selected-location {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  display: inline;
+  vertical-align: middle;
+}
+
+.uv-index {
+  padding: 5px;
+  border-radius: 0.25rem;
+}
+
+/* Forecast card styles */
+#forecast {
+  grid-area: forecast;
+  padding: 15px;
+  background-color: rgb(130, 50, 161);
+}
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 200px;
+  justify-content: start;
+}
+
+.tile {
+  /* border-radius: 10px; */
+  margin: 10px 15px;
+  padding: 25px;
+  background-color: rgb(212, 120, 14);
+  /* width: 200px;
+  height: 300px; */
+}
+
+/* Search card styles */
+#search {
+  padding: 20px 20px;
+  grid-area: search;
+  background-color: rgb(23, 219, 72);
+}
+
+#recent-searches {
+  width: 80%;
+}
+
+#recent-searches button {
+  text-align: left;
+  text-transform: capitalize;
+}
+
+#current-btn {
+  width: 80%;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+#city-search {
+  width: 75%;
+  border: 2px solid #6c757d;
+}
+
+.info-text {
+  display: none;
+  font-style: italic;
+  color: red;
+}
+
+/* A couple media queries to help the layout on smaller screens */
+@media (max-width: 1050px) {
+  .grid {
+    gap: 20px;
+  }
+  #recent-searches {
+    width: 90%;
+  }
+  #city-search {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    gap: 10px;
+  }
+
+  body {
+    margin: 5px 1%;
+  }
 }
